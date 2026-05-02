@@ -56,8 +56,27 @@ if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+// Root — API info (shown when visiting the bare backend URL)
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    name: 'Tasklab API',
+    version: '1.0.0',
+    status: 'operational',
+    docs: 'https://github.com/AnkushGitRepo/TaskLab#-api-reference',
+    endpoints: {
+      health:   '/api/health',
+      auth:     '/api/auth',
+      tasks:    '/api/tasks',
+      projects: '/api/projects',
+      analytics:'/api/analytics',
+    },
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => res.json({ success: true, message: 'Tasklab API is running' }));
+
 
 // API Routes
 app.use('/api/auth', authRoutes);
