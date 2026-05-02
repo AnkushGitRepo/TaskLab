@@ -4,8 +4,12 @@ const cors = require('cors');
 const compression = require('compression');
 const morgan = require('morgan');
 const mongoSanitize = require('express-mongo-sanitize');
+const mongoose = require('mongoose');
 const { CLIENT_URL, NODE_ENV } = require('./config/env');
 const { errorHandler } = require('./middleware/errorMiddleware');
+
+// Disable Mongoose command buffering globally — fail fast instead of 10s timeout
+mongoose.set('bufferCommands', false);
 
 // Route imports
 const authRoutes = require('./routes/authRoutes');
