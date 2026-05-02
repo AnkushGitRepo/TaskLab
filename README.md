@@ -8,9 +8,11 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen)](https://mongodb.com)
-[![API](https://img.shields.io/badge/API-Live%20on%20Vercel-black)](https://tasklab-beta.vercel.app/api/health)
+[![Frontend](https://img.shields.io/badge/Frontend-Live-brightgreen)](https://tasklab-client.vercel.app)
+[![API](https://img.shields.io/badge/API-Live-black)](https://tasklab-beta.vercel.app/api/health)
 
-> 🌐 **Live API:** https://tasklab-beta.vercel.app
+> 🌐 **Live App:** https://tasklab-client.vercel.app  
+> ⚙️ **Live API:** https://tasklab-beta.vercel.app
 
 ---
 

@@ -27,8 +27,9 @@ const ALLOWED_ORIGINS = [
   CLIENT_URL,
   'http://localhost:5173',
   'http://localhost:3000',
-  'https://tasklab-beta.vercel.app',   // Live backend (for Vercel preview requests)
-  /\.vercel\.app$/,                     // Any Vercel subdomain (frontend previews)
+  'https://tasklab-client.vercel.app',  // Live frontend
+  'https://tasklab-beta.vercel.app',    // Live backend (for Vercel preview requests)
+  /\.vercel\.app$/,                     // Any Vercel subdomain (preview deploys)
 ];
 
 app.use(cors({
