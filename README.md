@@ -1,6 +1,7 @@
 # Tasklab
 
-![Tasklab — Organize everything in your life](./TaskLap.png)
+![Tasklab — Organize everything in your life](https://res.cloudinary.com/dtxtzkrxk/image/upload/TaskLa_yn01p7.jpg)
+
 
 > **Organize everything in your life.** A premium full-stack productivity suite with Kanban boards, advanced filters, real-time notifications, analytics, and beautiful dark-mode-ready design.
 
