@@ -8,7 +8,9 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen)](https://mongodb.com)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://vercel.com)
+[![API](https://img.shields.io/badge/API-Live%20on%20Vercel-black)](https://tasklab-beta.vercel.app/api/health)
+
+> 🌐 **Live API:** https://tasklab-beta.vercel.app
 
 ---
 
@@ -191,38 +193,25 @@ Open **http://localhost:5173** in your browser.
 
 Tasklab is structured for deployment as **two separate Vercel projects** — one for the backend API and one for the React frontend.
 
-### Step 1 — Deploy the Backend API
+## 🌐 Deployment
 
-1. Import the `server/` directory (or the whole repo) as a new Vercel project
-2. Set **Root Directory** to `server`
-3. Add the following **Environment Variables** in Vercel Dashboard:
+### Live Backend API
 
-   | Variable | Value |
-   |----------|-------|
-   | `MONGODB_URI` | Your MongoDB Atlas connection string |
-   | `JWT_SECRET` | A strong random string (32+ chars) |
-   | `JWT_EXPIRE` | `7d` |
-   | `CLIENT_URL` | Your Vercel frontend URL (after deploying client) |
-   | `NODE_ENV` | `production` |
+| | URL |
+|--|-----|
+| **API Base** | https://tasklab-beta.vercel.app |
+| **Health Check** | https://tasklab-beta.vercel.app/api/health |
+| **Auth** | https://tasklab-beta.vercel.app/api/auth/login |
 
-4. Vercel will automatically detect `server/vercel.json` and deploy the Express app as serverless functions
-5. Note the deployment URL, e.g. `https://tasklab-api.vercel.app`
+### Deploy the Frontend Client
 
-### Step 2 — Deploy the Frontend Client
-
-1. Import the repo as a second Vercel project
+1. Import this repo as a new Vercel project
 2. Set **Root Directory** to `client`
-3. Set **Build Command** to `npm run build`
-4. Set **Output Directory** to `dist`
-5. Add the following **Environment Variable**:
+3. **Build Command:** `npm run build` · **Output Directory:** `dist`
+4. The `client/.env.production` already points to `https://tasklab-beta.vercel.app/api` — no extra env vars needed
+5. `client/vercel.json` handles SPA routing automatically
 
-   | Variable | Value |
-   |----------|-------|
-   | `VITE_API_BASE_URL` | Your deployed API URL from Step 1 |
-
-6. Vercel auto-detects `client/vercel.json` and handles SPA routing
-
-> **Note:** Update `vite.config.js` proxy and CORS `CLIENT_URL` env var after you know both deployment URLs.
+> **Tip:** After the frontend is live, update `CLIENT_URL` in the backend's Vercel Environment Variables to the frontend URL so CORS is locked down.
 
 ---
 

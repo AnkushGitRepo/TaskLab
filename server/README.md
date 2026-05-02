@@ -1,6 +1,9 @@
 # Tasklab — Backend API
 
 > **Express.js REST API** powering the Tasklab productivity suite. Built with Node.js, MongoDB Atlas, and JWT authentication. Vercel-serverless ready.
+>
+> 🌐 **Live API:** https://tasklab-beta.vercel.app | Health check: https://tasklab-beta.vercel.app/api/health
+
 
 ---
 

@@ -18,12 +18,13 @@ const app = express();
 // Security headers
 app.use(helmet());
 
-// CORS — allow localhost (dev) and any Vercel deployment (prod)
+// CORS — allow localhost (dev) and Vercel deployments (prod)
 const ALLOWED_ORIGINS = [
   CLIENT_URL,
   'http://localhost:5173',
   'http://localhost:3000',
-  /\.vercel\.app$/,
+  'https://tasklab-beta.vercel.app',   // Live backend (for Vercel preview requests)
+  /\.vercel\.app$/,                     // Any Vercel subdomain (frontend previews)
 ];
 
 app.use(cors({
